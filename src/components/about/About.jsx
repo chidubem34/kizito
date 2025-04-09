@@ -3,7 +3,7 @@ import './about.css'
 import { FaAward } from 'react-icons/fa'
 import { FiUsers } from 'react-icons/fi'
 import { VscFolderLibrary } from 'react-icons/vsc'
-import ME from '../../assets/fff.png'
+import ME from '../../assets/kx.jpeg'
 
 
 const About = () => {
@@ -24,20 +24,20 @@ const About = () => {
             <article className="about__card">
               <FaAward className='about__icon' />
               <h5>Experience</h5>
-              <small>2+ Years Working</small>
+              <small>3+ Years working</small>
             </article>
 
             <article className="about__card">
               <FiUsers className='about__icon' />
               <h5>Clients</h5>
-              <small>2</small>
+              <small>7</small>
             </article>
 
 
             <article className="about__card">
               <VscFolderLibrary className='about__icon' />
               <h5>Projects</h5>
-              <small>2  0+ Completed</small>
+              <small>20+ Completed</small>
             </article>
           </div>
 
@@ -45,7 +45,7 @@ const About = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis rem distinctio fugit voluptate at quasi unde praesentium fugiat saepe corrupti? Delectus similique necessitatibus quasi illum dolore quam fugiat optio minus!
           </p>
 
-          <a href="" className='btn btn-primary'>Lets Talk</a>
+          <a href="#contact" className='btn btn-primary'>Lets Talk</a>
         </div>
       </div>
     </section>
