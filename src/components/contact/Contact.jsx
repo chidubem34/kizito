@@ -33,7 +33,7 @@ const Contact = () => {
             <a target='_blank' href="https://wa.me/+2347065623281">Send a message</a>
           </article>
         </div>
-
+        
         <form action="">
           <input type="text" name='name' placeholder='Your full name' required />
           <input type="email" name="email" placeholder='Your Email' required />
