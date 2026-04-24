@@ -1,44 +1,80 @@
 import './contact.css'
-import { MdOutlineEmail } from 'react-icons/md'
+import { MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md'
 import { RiMessengerLine } from 'react-icons/ri'
 import { BsWhatsapp } from 'react-icons/bs'
+import { useRef } from 'react'
 
+const contactOptions = [
+  {
+    icon: <MdOutlineEmail />,
+    title: 'Email',
+    info: 'agbowachidubem@gmail.com',
+    link: 'mailto:kizito65623281@gmail.com',
+  },
+  {
+    icon: <RiMessengerLine />,
+    title: 'Messenger',
+    info: 'Kizito Chidubem',
+    link: 'https://m.me/yourusername', // Adjust appropriately
+  },
+  {
+    icon: <BsWhatsapp />,
+    title: 'WhatsApp',
+    info: '+234 706 5623 281',
+    link: 'https://wa.me/+2347065623281',
+  },
+]
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    // Assuming EmailJS or similar is used, currently just a placeholder
+    alert('Message sent successfully! (Placeholder)');
+    e.target.reset();
+  };
+
   return (
-    <section id='contact'>
+    <section id="contact">
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
 
       <div className="container contact__container">
-        <div className="contact__options">
-          <article className="contact__option">
-            <MdOutlineEmail className="contact__option-icon" />
-            <h4>Email</h4>
-            <h5>agbowachidubem@gmail.com</h5>
-            <a target='_blank' href="mailto:kizito65623281@gmail.com">Send a message</a>
-          </article>
-
-          <article className="contact__option">
-            <RiMessengerLine className="contact__option-icon" />
-            <h4>Messenger</h4>
-            <h5>Kizito Chidubem</h5>
-            <a target='_blank' href="mailto:kizito65623281@gmail.com">Send a message</a>
-          </article>
-
-          <article className="contact__option">
-            <BsWhatsapp className="contact__option-icon" />
-            <h4>WhatsApp</h4>
-            <h5>+234 706 5623 281</h5>
-            <a target='_blank' href="https://wa.me/+2347065623281">Send a message</a>
-          </article>
+        <div className="contact__info">
+          <div className="contact__info-header reveal-left">
+            <h3>Let&apos;s talk about your project</h3>
+            <p>I&apos;m always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+          </div>
+          
+          <div className="contact__options">
+            {contactOptions.map(({ icon, title, info, link }, index) => (
+              <article className={`contact__option reveal-left reveal-delay-${index}`} key={title}>
+                <div className="contact__option-icon">{icon}</div>
+                <div>
+                  <h4>{title}</h4>
+                  <p>{info}</p>
+                  <a href={link} target="_blank" rel="noreferrer">Send a message</a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
         
-        <form action="">
-          <input type="text" name='name' placeholder='Your full name' required />
-          <input type="email" name="email" placeholder='Your Email' required />
-          <textarea name="message" rows="7" placeholder='Your Message' required className="contact__option-icon"></textarea>
-          <button type='submit' className='btn btn-primary'>Send Message</button>
+        <form ref={form} onSubmit={sendEmail} className="reveal-right">
+          <div className="form__group">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <label>Name</label>
+          </div>
+          <div className="form__group">
+            <input type="email" name="email" placeholder="Email Address" required />
+            <label>Email</label>
+          </div>
+          <div className="form__group">
+            <textarea name="message" rows="7" placeholder="Your Message" required />
+            <label>Message</label>
+          </div>
+          <button type="submit" className="btn btn-primary">Send Message</button>
         </form>
       </div>
     </section>

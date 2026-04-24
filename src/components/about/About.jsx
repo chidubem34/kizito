@@ -1,51 +1,48 @@
-// import React from 'react'
 import './about.css'
 import { FaAward } from 'react-icons/fa'
 import { FiUsers } from 'react-icons/fi'
 import { VscFolderLibrary } from 'react-icons/vsc'
-import ME from '../../assets/kx.jpeg'
-
+import ME from '../../assets/picture.jpeg'
 
 const About = () => {
+  const stats = [
+    { icon: <FaAward />, title: 'Experience', value: '3+ Years' },
+    { icon: <FiUsers />, title: 'Clients', value: '7 Served' },
+    { icon: <VscFolderLibrary />, title: 'Projects', value: '20+ Done' },
+  ]
+
   return (
-    <section id='about'>
+    <section id="about">
       <h5>Get To Know</h5>
       <h2>About Me</h2>
 
       <div className="container about__container">
-        <div className="about__me">
+        <div className="about__me reveal-left">
           <div className="about__me-image">
-            <img src={ME} alt="" />
+            <img src={ME} alt="Kizito Chidubem" />
+            <div className="about__me-overlay" />
           </div>
         </div>
 
-        <div className="about__content">
+        <div className="about__content reveal-right">
           <div className="about__cards">
-            <article className="about__card">
-              <FaAward className='about__icon' />
-              <h5>Experience</h5>
-              <small>3+ Years working</small>
-            </article>
-
-            <article className="about__card">
-              <FiUsers className='about__icon' />
-              <h5>Clients</h5>
-              <small>7</small>
-            </article>
-
-
-            <article className="about__card">
-              <VscFolderLibrary className='about__icon' />
-              <h5>Projects</h5>
-              <small>20+ Completed</small>
-            </article>
+            {stats.map(({ icon, title, value }, i) => (
+              <article className={`about__card reveal reveal-delay-${i + 1}`} key={title}>
+                <div className="about__card-icon">{icon}</div>
+                <h5>{title}</h5>
+                <small>{value}</small>
+              </article>
+            ))}
           </div>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis rem distinctio fugit voluptate at quasi unde praesentium fugiat saepe corrupti? Delectus similique necessitatibus quasi illum dolore quam fugiat optio minus!
+            I&apos;m a passionate Front-end Developer based in Nigeria, specialising
+            in building polished, high-performance web applications. I love
+            turning complex problems into simple, beautiful, and intuitive
+            designs using React, modern CSS, and clean code practices.
           </p>
 
-          <a href="#contact" className='btn btn-primary'>Lets Talk</a>
+          <a href="#contact" className="btn btn-primary">Let&apos;s Talk</a>
         </div>
       </div>
     </section>

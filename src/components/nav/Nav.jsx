@@ -1,60 +1,34 @@
-// import React from 'react'
 import './nav.css'
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai'
-import { BiBook } from 'react-icons/bi'
+import { BiBook, BiMessageSquareDetail } from 'react-icons/bi'
 import { RiServiceLine } from 'react-icons/ri'
-import { BiMessageSquareDetail } from 'react-icons/bi'
 import { useState } from 'react'
 
-
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState("#")
+  const [activeNav, setActiveNav] = useState('#')
+
+  const links = [
+    { href: '#', icon: <AiOutlineHome />, label: 'Home' },
+    { href: '#about', icon: <AiOutlineUser />, label: 'About' },
+    { href: '#experience', icon: <BiBook />, label: 'Skills' },
+    { href: '#services', icon: <RiServiceLine />, label: 'Services' },
+    { href: '#contact', icon: <BiMessageSquareDetail />, label: 'Contact' },
+  ]
 
   return (
-    <nav>
-      <a
-        href="#"
-        onClick={() => setActiveNav('#')}
-        className={activeNav === '#' ? 'active' : ''}
-      >
-        <AiOutlineHome />
-      </a>
-
-
-      <a
-        onClick={() => setActiveNav('#about')}
-        href="#about"
-        className={activeNav === '#about' ? 'active' : ''}
-      >
-        <AiOutlineUser />
-      </a>
-
-      <a
-
-        onClick={() => setActiveNav('#experience')}
-        className={activeNav === '#experience' ? 'active' : ''}
-        href="#experience"
-      >
-        <BiBook />
-      </a>
-
-
-      <a
-        onClick={() => setActiveNav('#services')}
-        className={activeNav === '#services' ? 'active' : ''}
-        href="#services"
-      >
-        <RiServiceLine />
-      </a>
-
-      <a
-        onClick={() => setActiveNav('#contact')}
-        className={activeNav === '#contact' ? 'active' : ''}
-        href="#contact"
-      >
-        <BiMessageSquareDetail /> 
-      </a>
-
+    <nav id="floating-nav">
+      {links.map(({ href, icon, label }) => (
+        <a
+          key={href}
+          href={href}
+          onClick={() => setActiveNav(href)}
+          className={activeNav === href ? 'active' : ''}
+          title={label}
+        >
+          {icon}
+          <span className="nav__label">{label}</span>
+        </a>
+      ))}
     </nav>
   )
 }

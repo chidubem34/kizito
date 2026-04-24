@@ -1,0 +1,27 @@
+.main-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Cursor glow
+   ═══════════════════════════════════════════════════════════════════ */
+.cursor-glow {
+  position: fixed;
+  top: -150px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.06), transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 1024px) {
+  .cursor-glow { display: none; }
+}

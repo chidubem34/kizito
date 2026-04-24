@@ -1,68 +1,174 @@
+/* ═══════════════════════════════════════════════════════════════════
+   EXPERIENCE — Glass Panels with Skill Badges
+   ═══════════════════════════════════════════════════════════════════ */
 .experience__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
 }
 
-.experience__container > div {
-    background: var(--color-bg-variant);
-    padding: 2.4rem 5rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
+/* ─── GLASS PANELS ───────────────────────────────────────────────── */
+.experience__panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: 2.5rem 3rem;
+  border-radius: var(--radius-xl);
+  transition: var(--transition);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
 }
 
-.experience__container > div:hover{
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
+/* gradient top border accent */
+.experience__panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0.6;
+  transition: var(--transition);
 }
 
-.experience__container > div h3{
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--color-primary);
+.experience__panel:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(34, 211, 238, 0.25);
+  transform: translateY(-6px);
+  box-shadow: var(--glow-primary), var(--glass-shadow-lg);
 }
 
+.experience__panel:hover::before {
+  opacity: 1;
+  height: 4px;
+}
+
+.experience__panel-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.experience__panel-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.experience__panel h3 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── SKILL GRID ─────────────────────────────────────────────────── */
 .experience__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 1.5rem;
 }
 
-.experience__details{
-    display: flex;
-    gap: 1rem;
+.experience__details {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.experience__details:hover {
+  transform: translateX(5px);
 }
 
 .experience__details-icon {
-    margin-top: 6px;
-    color: var(--color-primary);
+  margin-top: 5px;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.4));
 }
 
-@media screen and (max-width:1024px) {
-    .experience__container {
-        grid-template-columns: 1fr;
-    }
-
-    .experience__container > div {
-        width: 80%;
-        padding: 2rem;
-        margin: 0 auto;
-    }
-
-    .experience__content {
-        padding: 1rem;
-    }
+.experience__details h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 0.3rem;
 }
 
-@media screen and (max-width:600px) {
-    .experience__container {
-        gap: 1rem;
-    }
+/* ─── SKILL BADGES ───────────────────────────────────────────────── */
+.skill-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(4px);
+}
 
-    .experience__container > div {
-        width: 100%;
-        padding: 2rem 1rem;
-    }
+.skill-badge--expert {
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.skill-badge--mid {
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+}
+
+.skill-badge--beginner {
+  background: rgba(168, 85, 247, 0.1);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+@media screen and (max-width: 1024px) {
+  .experience__container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .experience__panel {
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experience__panel {
+    padding: 2rem;
+  }
+  
+  .experience__content {
+    column-gap: 1.2rem;
+    row-gap: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .experience__panel {
+    padding: 2rem 1.2rem;
+  }
+  
+  .experience__content {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+  
+  .experience__panel-header {
+    margin-bottom: 2rem;
+  }
 }

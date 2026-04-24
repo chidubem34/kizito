@@ -1,14 +1,17 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
+import { BsDownload } from 'react-icons/bs'
+import { HiOutlineChatBubbleLeftRight } from 'react-icons/hi2'
 
 const CTA = () => {
   return (
-    <div className='cta'>
-        <a href="#" className='btn'>Download CV</a>
-        <a href="#contact" className='btn btn-primary'>Lets talk</a>
+    <div className="cta">
+      <a href="#" className="btn">
+        <BsDownload /> Download CV
+      </a>
+      <a href="#contact" className="btn btn-primary">
+        <HiOutlineChatBubbleLeftRight /> Let&apos;s Talk
+      </a>
     </div>
   )
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default CTA
