@@ -1,8 +1,8 @@
 import './testimonials.css'
-import AVTR1 from '../../assets/fff.png'
-import AVTR2 from '../../assets/fff.png'
-import AVTR3 from '../../assets/fff.png'
-import AVTR4 from '../../assets/fff.png'
+import AVTR1 from '../../assets/ore.webp'
+import AVTR2 from '../../assets/damian.webp'
+import AVTR3 from '../../assets/kristin.webp'
+import AVTR4 from '../../assets/kizito.webp'
 import { Pagination, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FaQuoteLeft } from 'react-icons/fa'
@@ -14,13 +14,13 @@ import 'swiper/css/pagination';
 const testimonialsData = [
   {
     avatar: AVTR1,
-    name: 'Sarah Johnson',
+    name: 'Sarah Ezeobi',
     role: 'Product Manager',
     review: 'Kizito is an exceptional developer who truly understands both the technical and design aspects of web development. His attention to detail is remarkable.'
   },
   {
     avatar: AVTR2,
-    name: 'Michael Chen',
+    name: 'Damian Folade',
     role: 'Startup Founder',
     review: 'The quality of work delivered by Kizito exceeded my expectations. He turned our complex requirements into a beautifully functional application.'
   },

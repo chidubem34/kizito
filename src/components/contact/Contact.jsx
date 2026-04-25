@@ -3,6 +3,7 @@ import { MdOutlineEmail, MdOutlineLocationOn } from 'react-icons/md'
 import { RiMessengerLine } from 'react-icons/ri'
 import { BsWhatsapp } from 'react-icons/bs'
 import { useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 const contactOptions = [
   {
@@ -30,8 +31,20 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    // Assuming EmailJS or similar is used, currently just a placeholder
-    alert('Message sent successfully! (Placeholder)');
+    
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      .then((result) => {
+          console.log(result.text);
+          alert('Message sent successfully!');
+      }, (error) => {
+          console.log(error.text);
+          alert('Failed to send the message, please try again later.');
+      });
+      
     e.target.reset();
   };
 

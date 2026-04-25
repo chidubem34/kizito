@@ -1,7 +1,7 @@
 import './portfolio.css'
 import IMG1 from '../../assets/changer.png'
 import IMG2 from '../../assets/ecommerce.png'
-import IMG3 from '../../assets/kcr.png'
+import IMG3 from '../../assets/liturgy.png'
 import IMG4 from '../../assets/weather.png'
 import IMG5 from '../../assets/travel.png'
 import IMG6 from '../../assets/netflix.png'
@@ -13,7 +13,7 @@ const portfolioData = [
     id: 1, 
     image: IMG1, 
     title: 'Color Changer',
-    category: 'Web App',
+    category: 'practice',
     github: 'https://github.com/chidubem34/color-changer',
     demo: 'https://chidubem34.github.io/color-changer',
   },
@@ -28,14 +28,14 @@ const portfolioData = [
   {
     id: 3, 
     image: IMG3, 
-    title: 'Kodecamp Recruits',
-    category: 'Hiring Platform',
-    github: 'https://github.com/chidubem34/color-changer',
-    demo: 'https://chidubem34.github.io/color-changer',
+    title: 'Liturgy',
+    category: 'Hymn Library',
+    github: 'https://github.com/chidubem34/',
+    demo: 'https://dev.liturgy.kodehauz.dev',
   },
   {
     id: 4, 
-    image: IMG4, 
+    image: IMG4,
     title: 'Weather App',
     category: 'API Integration',
     github: 'https://github.com/chidubem34/weather-app',
@@ -46,8 +46,6 @@ const portfolioData = [
     image: IMG5, 
     title: 'Travel Tide',
     category: 'Booking App',
-    github: 'https://github.com/chidubem34/color-changer',
-    demo: 'https://chidubem34.github.io/color-changer',
   },
   {
     id: 6, 

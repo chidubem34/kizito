@@ -1,7 +1,8 @@
-import './footer.css'
-import { FaFacebookF, FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import { FiInstagram } from 'react-icons/fi'
+import "./footer.css";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,22 +18,50 @@ const Footer = () => {
             Building digital experiences that matter.
           </p>
           <div className="footer__socials">
-            <a href="https://github.com/chidubem34" target="_blank" rel="noreferrer"><FaGithub /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer"><FiInstagram /></a>
-            <a href="https://x.com" target="_blank" rel="noreferrer"><FaXTwitter /></a>
+            <a
+              href="https://github.com/chidubem34"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="www.linkedin.com/in/kizito-chidubem-427401328"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <FiInstagram />
+            </a>
+            <a href="https://x.com/kizito_08" target="_blank" rel="noreferrer">
+              <FaXTwitter />
+            </a>
           </div>
         </div>
 
         <div className="footer__links">
           <h4>Quick Links</h4>
           <ul className="permalinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Skills</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#experience">Skills</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
           </ul>
         </div>
 
@@ -48,7 +77,9 @@ const Footer = () => {
 
       <div className="footer__copyright">
         <div className="container">
-          <small>&copy; {currentYear} Kizito Chidubem. All rights reserved.</small>
+          <small>
+            &copy; {currentYear} Kizito Chidubem. All rights reserved.
+          </small>
           <div className="footer__legal">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
@@ -56,7 +87,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
